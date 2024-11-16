@@ -1,0 +1,34 @@
+<html>
+    <head></head>
+    <body>
+        <script>
+            // var add = function(a,b){
+            //     return a+b;
+            // }
+            //arrow functions//lamda expression
+            // var add = (a,b)=>a+b;
+            
+            // console.log(add(10,20));
+
+            // var ar = [10,4,547,29,47,22,59,693,472,572]
+
+            // var br = ar.filter(a=>!(a%2))
+            // console.log(br)
+
+            function Employee(fn,ln){
+                this.firstname=fn;
+                this.lastname=ln;
+                this.getFullName=function(){
+
+                    setTimeout(()=>{
+                        console.log(this.firstname+this.lastname)
+                    },2000)
+                }
+            }
+            var ob1 = new Employee('sai','krishna')
+            var ob2 = new Employee('mahesh','babu')
+            ob1.getFullName();
+            ob2.getFullName();
+        </script>
+    </body>
+</html>

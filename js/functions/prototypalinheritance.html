@@ -1,0 +1,25 @@
+<html>
+    <head></head>
+    <body>
+        <script>
+            function Person(n){
+                this.name=n;
+            }
+            Person.prototype.p=3344;
+            function User(m,nam){
+                this.mobile=m;
+                Person.call(this,nam)
+                User.prototype.__proto__=Person.prototype
+            }
+            User.prototype.u=1000;
+            function Admin(r,mob,na){
+                this.role=r;
+                User.call(this,mob,na)
+                Admin.prototype.__proto__=User.prototype;
+            }
+            Admin.prototype.x = 2300;
+            var a1 = new Admin("admin",9988,'ramu');
+            console.log(a1.p)
+        </script>
+    </body>
+</html>

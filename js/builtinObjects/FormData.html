@@ -1,0 +1,117 @@
+<html>
+    <head>
+        <style>
+            #d1{
+                padding: 5px;
+                display: flex;
+                flex-wrap: wrap;
+            }
+            #d1 li{
+                border:1px solid gray;
+                list-style: none;
+                width:200px;
+                padding:10px;
+            }
+            
+        </style>
+    </head>
+    <body>
+        <form onsubmit="showdata(event)">
+            <input type="text" name="firstname">
+            <br>
+            <input type="text" name="lastname">
+            <br>
+            <input type="text" name="age">
+            <br>
+            <input type="radio" name="gen" value="female">:Female &nbsp;
+            <input type="radio" name="gen" value="male">:Male &nbsp;
+            <input type="radio" name="gen" value="others">:Others &nbsp;
+            <br>
+            <input type="checkbox" name="tech" value="js">Javascript &nbsp;
+            <input type="checkbox" name="tech" value="njs">NodeJS &nbsp;
+            <input type="checkbox" name="tech" value="ajs">ANgular &nbsp;
+            <input type="checkbox" name="tech" value="rjs">ReactJS &nbsp;
+            <br>
+            <button>Show Data</button>
+        </form>
+        <ul id="d1">
+
+        </ul>
+        <script>
+            var students = [
+                {
+                    firstname:'praveen',
+                    lastname:'gubbala',
+                    age:41,
+                    gender:'male',
+                    techs:['rjs','ajs','njs']
+                },
+                {
+                    firstname:'dasu',
+                    lastname:'srinu',
+                    age:42,
+                    gender:'male',
+                    techs:['rjs','js','njs']
+                },
+                {
+                    firstname:'praveen',
+                    lastname:'gubbala',
+                    age:41,
+                    gender:'male',
+                    techs:['rjs','ajs','njs']
+                },
+                {
+                    firstname:'dasu',
+                    lastname:'srinu',
+                    age:42,
+                    gender:'male',
+                    techs:['rjs','js','njs']
+                }
+            ];
+            genbox();
+            function showdata(ev){
+                ev.preventDefault();
+                var studentDetails={}
+                var fd = new FormData(ev.target);
+                console.log(fd)
+                for(var k of fd.keys()){
+                    studentDetails[k]=''
+                }
+                for(var k in studentDetails){
+                    if(fd.getAll(k).length===1){
+                        studentDetails[k]=fd.get(k)
+                    }
+                    else{
+                        studentDetails[k]=fd.getAll(k)
+                    }
+                }
+                students.push(studentDetails)
+                genbox();
+                ev.target.reset();
+
+            }
+            
+            function genbox(){
+                document.getElementById("d1").innerHTML=''
+                students.forEach(function(student){
+                    var nli = document.createElement("li");
+                    var nameh1 = document.createElement("h1");
+                    nameh1.innerHTML=student['firstname'] + " " + student['lastname'];
+                 
+                    var ageh2 = document.createElement("h2");
+                    ageh2.innerHTML=student['age'];
+                    var genh3 = document.createElement("h3");
+                    genh3.innerHTML=student['gender'];
+                    var techsb = document.createElement("b");
+                    techsb.innerHTML=student['tech'];
+                    nli.appendChild(nameh1)
+                    nli.appendChild(ageh2)
+                    nli.appendChild(genh3)
+                    nli.appendChild(techsb)
+
+                    document.getElementById("d1").appendChild(nli)
+                })
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,19 @@
+<html>
+    <head></head>
+    <body>
+        <h1 onclick="console.log(this)">Welcome to Asalu Javascript</h1>
+        <h1 onclick="console.log(this)">Welcome to Edupoly</h1>
+        <script>
+            var ob1 = {
+                firstname:'ravi',
+                mobile:'9988'
+            }
+            var ob2 = {
+                company:'edupoly',
+                estDate:2018
+            }
+            ob1.__proto__=ob2;
+            console.log(ob1.company)
+        </script>
+    </body>
+</html>

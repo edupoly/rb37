@@ -1,0 +1,47 @@
+<html>
+    <head></head>
+    <body>
+        <script>
+            var ar = [10,20,40,3,28,58,11,9,33,22,8,44];
+
+            ar.sort(function(a,b){
+                if(a>b){
+                    return 1
+                }
+                else{
+                    return -1
+                }
+            });
+
+            console.log(ar)
+
+            // var br = ar.reduce(function(a,b){
+            //     a.push(b)
+            //     return a
+            // },[])
+
+            // console.log(br)
+
+            // var br = ar.map(function(a,i,c){
+            //     console.log(c)
+            //     return a*2
+            // })
+
+            // console.log(br)
+            // var br = ar.flat(3)
+            // console.log(ar)
+            // console.log(br)
+
+            // var x = ar.findIndex(function(a){
+            //     console.log("Hi")
+            //     if(a%2===0){
+            //         return true
+            //     }
+            //     else{
+            //         return false
+            //     }
+            // })
+            // console.log(x)
+        </script>
+    </body>
+</html>

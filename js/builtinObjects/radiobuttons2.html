@@ -1,0 +1,30 @@
+<html>
+    <head></head>
+    <body>
+        <input type="radio" name="gender" value="MALE" onchange="getGen(event)">:Male &nbsp;&nbsp;&nbsp;
+        <input type="radio" name="gender" value="FEMALE" onchange="getGen(event)">:Female &nbsp;&nbsp;&nbsp;
+        <input type="radio" name="gender" value="OTHERS" onchange="getGen(event)">:Others &nbsp;&nbsp;&nbsp;
+        <br>
+        <h1 id="gen"></h1>
+        <img id='gender' src="" alt="">
+        <script>
+            var x='';
+            var imgURL = "https://i.ytimg.com/vi/pRNEsOuqJ2Y/maxresdefault.jpg";
+            var imgURL2 = "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcR7vQhytuDeXwAyIaB0PvfF90dXPTMzHSf_ISfBDsX5hrLKyiAz";
+            
+            function getGen(ev){
+                if(ev.target.value==='MALE'){
+                    document.getElementById("gender").src = imgURL2
+                }
+                if(ev.target.value==='FEMALE'){
+                    document.getElementById("gender").src = imgURL
+                }
+                
+                if(ev.target.value==='OTHERS'){
+                    document.getElementById("gen").innerHTML = "Others"
+                }
+                
+            }
+        </script>
+    </body>
+</html>

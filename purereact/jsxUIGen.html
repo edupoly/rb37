@@ -1,0 +1,61 @@
+<html>
+    <head>
+        <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+       
+    </head>
+    <body>
+       
+        <div id="root"></div>
+        <div id="root2"></div>
+
+        <script type="text/babel">
+            var students = ['deepika','anushka','samanta','trisha',"tamannah"];
+            var sli = <ul>{students.map((s)=>{
+                            return <li>{s}</li>
+                        })}</ul>
+            ReactDOM.render(sli,document.getElementById("root"))
+
+            var employees = [
+                {
+                    name:'rahul reddy',
+                    age:34,
+                    gender:'male'
+                },
+                {
+                    name:'Rohit',
+                    age:24,
+                    gender:'male'
+                },
+                {
+                    name:'Sindhu',
+                    age:30,
+                    gender:'female'
+                },
+            ]
+
+            var etable = <table width="50%" align="center" border='2'>
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Age</th>
+                                    <th>Gender</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {
+                                    employees.map((emp)=>{
+                                        return <tr>
+                                                    <td>{emp.name}</td>
+                                                    <td>{emp.age}</td>
+                                                    <td>{emp.gender}</td>
+                                                </tr>
+                                    })
+                                }
+                            </tbody>
+                        </table>
+            ReactDOM.render(etable,document.getElementById("root2"))
+        </script>
+    </body>
+</html>

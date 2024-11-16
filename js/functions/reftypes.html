@@ -1,0 +1,46 @@
+<html>
+    <head></head>
+    <body>
+        <script>
+            
+
+            // var ar = [10,20];
+            // var br = [10,20];
+            // var cr = ar;
+            // console.log(ar===br)
+            // console.log(ar===cr)
+
+            var ob1 = {firstname:'praveen',lastname:'gubbala'}
+            var ob2 = {firstname:'praveen',lastname:'gubbala'}
+            var ob3 = ob1;
+            console.log(ob1===ob2)
+            console.log(ob1===ob3)
+
+            var ox1 = null
+            var ox2 = null
+            console.log(typeof ox1)
+
+            var ar = [];
+            var br = [];
+            console.log(ar===br)
+
+            function abc(){
+                console.log("Hello")
+            }
+            function xyz(){
+                console.log("Hello")
+            }
+            console.log(abc===xyz)
+
+            var pqr = abc;
+            pqr();
+            console.log(abc===pqr)
+
+
+            var s1 = "praveen";//immutable
+            var s2 = s1;
+            s1[2]='x';
+            console.log(s1)
+        </script>
+    </body>
+</html>

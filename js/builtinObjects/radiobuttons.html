@@ -1,0 +1,35 @@
+<html>
+    <head></head>
+    <body>
+        <input type="radio" name="gender" value="MALE" onchange="getGen()">:Male &nbsp;&nbsp;&nbsp;
+        <input type="radio" name="gender" value="FEMALE" onchange="getGen()">:Female &nbsp;&nbsp;&nbsp;
+        <input type="radio" name="gender" value="OTHERS" onchange="getGen()">:Others &nbsp;&nbsp;&nbsp;
+        <br>
+        <h1 id="gen"></h1>
+        <script>
+            var x='';
+
+            function getGen(ev){
+                var rs = document.getElementsByName("gender");
+                console.log(rs)
+                rs.forEach(function(rel){
+                    if(rel.checked===true){
+                        document.getElementById('gen').innerHTML=rel.value;
+                    }
+                })
+            }
+            var y = document.getElementsByTagName("input");
+            console.log(y)
+
+            var ar = [10,20,38];
+            console.dir(ar)
+
+            var ob1 = {
+                firstname:'praveen',
+                lastname:'gubbala',
+                age:33
+            }
+            console.dir(ob1)
+        </script>
+    </body>
+</html>

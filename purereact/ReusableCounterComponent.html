@@ -1,0 +1,52 @@
+<html>
+    <head>
+        <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+        <style>
+            .reddish{
+                color:indianred;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Edupoly</h1>
+        <h1>Praveen</h1>
+        <input type="text" placeholder="Praveen">
+        <input type="text" placeholder="Edupoly">
+
+        <div id="root"></div>
+
+        <script type="text/babel">
+            function Counter(props){
+                console.log(props)
+                var [c,setC] = React.useState(props.ivalue);
+                
+                function inc(){
+                    setC(c+props.step)
+                }
+                function dec(){
+                    setC(c-props.step)
+                }
+                function reset(){
+                    setC(props.ivalue)
+                }
+                return <div style={{border:'2px solid',padding:'10px',margin:"10px"}}>
+                            <h1>{props.children} Count:{c}</h1>
+                            <button onClick={()=>{inc()}}>Increment</button>
+                            <button onClick={()=>{dec()}}>Decrement</button>
+                            <button onClick={()=>{reset()}}>Reset</button>
+                        </div>
+            }
+            ReactDOM.render(<div>
+                <Counter ivalue={100} step={10}>India</Counter>
+                <Counter step={20} ivalue={200}>Pakistan</Counter></div>
+                ,document.getElementById('root'))
+        </script>
+    </body>
+</html>
+
+<!-- 
+1. what is component?
+2. How to render component?
+-->

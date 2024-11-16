@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+        <style>
+            .reddish{
+                color:indianred;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="root"></div>
+
+
+        <script type="text/babel">
+
+            var ar = [12,2,45,29]
+
+            var jh1 =   <div style={{display:'flex'}}>
+                            {
+                                ar.map((a)=>{
+                                    return <div style={{border:'2px solid',padding:'10px',margin:'10px'}}>{a}</div>
+                                })
+                            }
+                        </div>
+            ReactDOM.render(jh1,document.getElementById("root"))
+            
+        </script>
+    </body>
+</html>
+<!-- 
+    var a = 100;
+    var b = "praveen";
+    var c = true;
+    var d = [10,20]
+    var f = {firstname:'rahul'}
+    var g = function(){}
+    var h = <h1>skjdf</h1>
+ -->

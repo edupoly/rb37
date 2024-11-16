@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <style>
+            img{
+                width:200px;
+            }
+        </style>
+    </head>
+    <body>
+        <img src="" alt="" id="d1">
+        <button onclick="abc()">Show Deepika</button>
+        <button onclick="xyz()">Show Pawan Kalyan</button>
+        <script>
+            var imgURL = "https://i.ytimg.com/vi/pRNEsOuqJ2Y/maxresdefault.jpg";
+            var imgURL2 = "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcR7vQhytuDeXwAyIaB0PvfF90dXPTMzHSf_ISfBDsX5hrLKyiAz";
+            function abc(){
+                var x = document.getElementById("d1");
+                x.src = imgURL;
+            }
+            function xyz(){
+                var y = document.getElementById("d1")
+                y.src = imgURL2;
+            }
+        </script>
+    </body>
+</html>

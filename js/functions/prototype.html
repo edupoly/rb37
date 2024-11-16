@@ -1,0 +1,23 @@
+<html>
+    <head></head>
+    <script>
+        function Employee(n,a){
+            this.name=n;
+            this.age=a;
+        }
+        Employee.prototype.company='Edupoly'
+        var em1 = new Employee('praveen',41)
+        var em2 = new Employee('srikanth',37)
+
+        console.dir(em1)
+        console.dir(em2)
+        console.log(em2.company)
+        console.log(em1.company)
+        em1.__proto__.company="VLR Training";
+        console.log(em2.company)
+        console.log(em1.company)
+    </script>
+</html>
+<!-- 
+
+ -->

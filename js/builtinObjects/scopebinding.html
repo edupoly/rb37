@@ -1,0 +1,30 @@
+<html>
+    <head></head>
+    <body>
+        <button onclick="alert('hi')">My Button</button>
+        <div id="d1"></div>
+        <ul id="d2">
+
+        </ul>
+        <script>
+            var ar = [10,38,57,28,59,26,60];
+            for(let i=0;i<=ar.length-1;i++){
+                var newbtn = document.createElement("button");
+                newbtn.innerHTML=ar[i];
+                newbtn.onclick=function(){
+                    alert(i)
+                };
+                var x = document.getElementById("d1")
+                x.appendChild(newbtn)
+            }
+            var students = ['anushka','samanta','thamanna','priya']
+            students.forEach(function(s){
+                var nli = document.createElement("li");
+                nli.innerHTML=s;
+                nli.onclick=function(){alert(s)}
+                document.getElementById("d2").appendChild(nli)
+            })
+            
+        </script>
+    </body>
+</html>

@@ -1,0 +1,52 @@
+<html>
+    <head></head>
+    <body>
+        <h1 onclick="console.log(this)">Welcome to Asalu Javascript</h1>
+        <h1 onclick="console.log(this)">Welcome to Edupoly</h1>
+        <script>
+            
+            //constructor function
+            function Employee(n,d,p){
+                //this={}
+                this.name=n;
+                this.dob=d;
+                this.place=p;
+                this.getAge = function(){
+                    var emp1t = (new Date(this.dob)).getTime()
+                    var tt = (new Date()).getTime();
+                    console.log((tt-emp1t)/(1000*60*60*24*365))
+                }
+                //return this
+            }
+            Employee.prototype.company="Edupoly"
+            //instance object
+            var em1 = new Employee("yashu","2/16/2001","nandyala");
+            var em2 = new Employee("srikanth","3/25/2000",'gajwel');
+            var em3 = new Employee("brahmi","2/1/1956","hyd")
+
+
+            console.log(em1.company)
+            console.log(em3.company)
+
+            em1.__proto__.company="Edupoly Solutions Pvt Ltd";
+            console.log(em1.company)
+            console.log(em2.company)
+            console.log(em3.company)
+            // em1.getAge()
+            // em2.getAge()
+            // em3.getAge()
+            
+            console.log(em1)
+            // console.log(em2)
+            // console.log(em3)
+
+
+
+
+            var ar = [12,239,485,57,26,60];
+            var br = new Array(10,20,30,40)
+            console.dir(ar)
+            console.dir(br)
+        </script>
+    </body>
+</html>

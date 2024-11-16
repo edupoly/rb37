@@ -1,0 +1,62 @@
+<html>
+    <head>
+        <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+        <style>
+            .reddish{
+                color:indianred;
+            }
+        </style>
+    </head>
+    <body>
+        
+        <div id="root"></div>
+
+        <script type="text/babel">
+            function Todolist(){
+                var [todos,setTodos] = React.useState([])
+                function addTodo(){
+                    var x = document.getElementById("d1").value;
+                    setTodos([...todos,x])
+                }
+                return (
+                    <div style={{border:'2px solid',padding:'10px',margin:"10px"}}>
+                        <input type="text" id="d1"/>
+                        <button onClick={()=>{addTodo()}}>Add Todo</button>
+                        <ul>
+                            {
+                                todos.map((todo)=>{
+                                    return <li>{todo}</li>
+                                })
+                            }
+                        </ul>
+                    </div>
+                )
+            }
+            function App(){
+                var [todolists,setTodolists]  = React.useState([]);
+                function newTodolist(){
+                    setTodolists([...todolists,todolists.length+1])
+                }
+                return(
+                    <div style={{border:'2px solid lightblue',padding:'10px',margin:"10px"}}>
+                        <button onClick={()=>{newTodolist()}}>Add Todolist</button>
+                        {
+                            todolists.map((a,i)=>{
+                                return <Todolist></Todolist>
+                            })
+                        }
+                    </div>
+                )
+            }
+            ReactDOM.render(<App></App>,document.getElementById('root'))
+
+        </script>
+    </body>
+</html>
+
+<!-- 
+1. what is component?
+2. How to render component?
+-->

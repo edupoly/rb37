@@ -1,0 +1,24 @@
+<html>
+    <head></head>
+    <body>
+        <script>
+            // var ob1 = {
+            //     firstname:'praveen',
+            //     age:33
+            // }
+            // Object.freeze(ob1)
+            // ob1.age=20;
+            // console.log(ob1)
+
+            var ar = [10,20,49];
+            Object.freeze(ar);
+            // ar.push(100)
+            // ar[1]= 99;
+            ar = [...ar,100]
+            var temp = [...ar];
+            temp[1]=99;
+            ar = [...temp]
+            console.log(ar)
+        </script>
+    </body>
+</html>

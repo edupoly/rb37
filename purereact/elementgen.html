@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+        <style>
+            .reddish{
+                color:indianred;
+            }
+        </style>
+    </head>
+    <body>
+        <h1 style="border:2px solid red" class="reddish">This is HTML element {10+20}</h1>
+        <div id="d1"></div>
+        <div id="root"></div>
+        <div id="root2"></div>
+        <script type="text/babel">
+
+            var nh1 = document.createElement("h1");
+            nh1.innerHTML = `This is JS h1 Element ${10+20}`;
+            nh1.style.border = "2px solid lightblue";
+            nh1.className="reddish"
+            document.getElementById("d1").appendChild(nh1)
+
+            var rh1 = React.createElement("h1",{style:{border:"2px solid green"},className:"reddish"},`This is React Element ${10+20}`);
+            ReactDOM.render(rh1,document.getElementById("root"))
+
+            var jsh1 = <h1 style={{border:"2px solid blue"}} className="reddish">This is JSX Element {10+20}</h1>;
+            ReactDOM.render(jsh1,document.getElementById("root2"))
+        </script>
+    </body>
+</html>
+<!-- 
+    var a = 100;
+    var b = "praveen";
+    var c = true;
+    var d = [10,20]
+    var f = {firstname:'rahul'}
+    var g = function(){}
+    var h = <h1>skjdf</h1>
+ -->

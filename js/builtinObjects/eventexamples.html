@@ -1,0 +1,13 @@
+<html>
+    <head></head>
+    <body>
+        <button onclick="abc(event)">clicked 0 times</button>
+        <script>
+            var c = 0;
+            function abc(e){
+                c++;
+                e.target.innerHTML= "clicked "+ c + " times";
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,32 @@
+<html>
+    <head></head>
+    <body>
+        <script>
+            function Person(d){
+                this.dob=d
+            }
+            Person.prototype.xyz=function(){
+                console.log("person function")
+            }
+            function User(n,x){
+                this.name=n;
+                Person.call(this,x)
+                this.__proto__=Person.prototype;
+            }
+            User.prototype.abc=function(){
+                console.log("HI")
+            }
+            function Admin(n,m,d){
+                this.mobile=m;
+                User.call(this,n,d)
+                this.__proto__=User.prototype;
+            }
+
+            var ad1 = new Admin("praveen","123123",'1/2/2003')
+            console.log(ad1.name)
+            console.log(ad1.dob)
+            ad1.abc()
+            ad1.xyz();
+        </script>
+    </body>
+</html>

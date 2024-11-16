@@ -1,0 +1,61 @@
+<html>
+    <head></head>
+    <body>
+        <script>
+            function facto(x){
+                var f=1;
+                for(var i=x;i>=1;i--){
+                    f=f*i
+                }
+                console.log(f)
+                return f;
+            }
+
+            var res23= facto(9)
+            var x = facto(24)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            var n = 7,r = 4;
+
+            var nf=facto(n);
+            console.log(nf)
+
+            var rf=facto(r);
+
+            var nmrf = facto(n-r)
+
+            var nCr = nf/(nmrf*rf);
+            console.log(nCr)
+        </script>
+    </body>
+</html>
+
+
+
+
+<!-- 
+
+    nCr = (n!/((n-r)!*r!))
+    n = 7,
+    r = 4
+    nf = 7*6*5*4*3*2*1 = 5040
+    rf = 24
+    nmrf = (7-4)!=3!=6
+
+    nCr = 5040/(6*24)
+ -->

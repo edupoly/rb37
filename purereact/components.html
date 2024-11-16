@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+        <style>
+            .reddish{
+                color:indianred;
+            }
+        </style>
+    </head>
+    <body>
+        
+        <div id="root"></div>
+
+        <script type="text/babel">
+            var JS1 = function(){return <i>India is a great country</i>}
+            var Js2 = function(){return <div><JS1></JS1><b>Cricket Team</b></div>}
+            
+            ReactDOM.render(<Js2 />,document.getElementById("root"))
+        </script>
+    </body>
+</html>
+
+<!-- 
+1. what is component?
+2. How to render component?
+-->

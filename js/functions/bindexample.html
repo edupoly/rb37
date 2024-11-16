@@ -1,0 +1,16 @@
+<html>
+    <head></head>
+    <body>
+        <script>
+            function abc(){
+                this.name="praveen"
+                console.log(this)
+            }
+            abc();
+            var pqr = abc.bind();
+            pqr()
+            var xyz = abc.bind({place:'hyderabad'});
+            xyz();
+        </script>
+    </body>
+</html>

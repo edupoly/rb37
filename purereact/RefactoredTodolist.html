@@ -1,0 +1,63 @@
+<html>
+    <head>
+        <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+        <style>
+            .mybox{
+                border:1px solid;
+                padding:10px;
+                margin:10px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="root"></div>
+
+
+        <script type="text/babel">
+            function Todo(props){
+                return(
+                    <li className="mybox">
+                        
+                        {props.i}-{props.todo.title}
+                        <button onClick={()=>{props.delTodo(props.i)}}>Delete</button>
+                    </li>
+                )
+            }
+            function Todolist(){
+                var [todos,setTodos] = React.useState([
+                    {
+                        title:'milk',
+                        status:false
+                    },
+                    {
+                        title:'curd',
+                        status:true
+                    },
+                    {
+                        title:'bananas',
+                        status:false
+                    },
+                    {
+                        title:'apples',
+                        status:false
+                    },
+                ])
+                function delTodo(ind){
+                    var temp = [...todos];
+                    temp.splice(ind,1)
+                    setTodos([...temp])
+                }
+                return (
+                    <ul className="mybox">
+                        {todos.map((todo,i)=>{
+                            return <Todo todo={todo} delTodo={delTodo} i={i}></Todo>
+                        })}
+                    </ul>
+                )
+            }
+            ReactDOM.render(<Todolist></Todolist>,document.getElementById('root'))
+        </script>
+    </body>
+</html>
